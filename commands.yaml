@@ -1,0 +1,10 @@
+# question 6 
+kubectl apply -f deployment.yaml
+kubectl get pods
+
+#question 7
+kubectl expose deployment myapp --type=NodePort --port=5000
+kubectl get svc
+http://<node-ip>:<nodeport>
+kubectl scale deployment myapp --replicas=3
+kubectl get pods

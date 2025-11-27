@@ -1,19 +1,20 @@
-apiversion /; app/v1
-kind : Deployment
-metadata :
-  app:myapp
-  spec:
-  replica:1
-  selectors;
-  matchlabesl:
-  app:myapp
-  template:
-  metadata:
-  labels:
-  app:myapp
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp
 spec:
-containsers:
--name:myapp
-image:myapp:latest
-port:
--containerport:5000
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      containers:
+      - name: myapp
+        image: myapp:latest
+        ports:
+        - containerPort: 5000
+
